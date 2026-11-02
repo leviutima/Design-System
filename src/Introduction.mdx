@@ -1,0 +1,51 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Introduction" />
+
+# @leviutima/ds
+
+A minimal black and white design system for React 19 and Tailwind CSS 4.
+
+## Install
+
+```sh
+npm i @leviutima/ds
+```
+
+Import the styles after Tailwind in your main CSS file:
+
+```css
+@import 'tailwindcss';
+@import '@leviutima/ds/styles.css';
+```
+
+Then import the components you need:
+
+```tsx
+import { Button, Field, Input } from '@leviutima/ds'
+
+export function SignInForm() {
+  return (
+    <form className="flex flex-col gap-4">
+      <Field label="Email" required>
+        <Input type="email" />
+      </Field>
+      <Button type="submit">Sign in</Button>
+    </form>
+  )
+}
+```
+
+## Principles
+
+- **Black and white.** Two grays exist only for secondary text and disabled controls.
+- **Inversion, not decoration.** Hover swaps background and text at once. There are no shadows or transitions.
+- **Shape over color.** Errors use a thicker border, an icon and a message, so they never depend on color.
+
+## Themes
+
+The system theme applies by default. Set `data-theme="light"` or `data-theme="dark"` on any element to force a theme inside it.
+
+## Customizing
+
+Every component accepts `className`, and a later Tailwind class replaces the one it conflicts with. To change the fonts, override `--font-sans` and `--font-mono` in your own `@theme`.

@@ -24,5 +24,13 @@ export { Select } from './components/select/Select'
 export type { SelectProps } from './components/select/Select'
 export { Switch } from './components/switch/Switch'
 export type { SwitchProps } from './components/switch/Switch'
+export {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from './components/table/Table'
 export { Textarea } from './components/textarea/Textarea'
 export type { TextareaProps } from './components/textarea/Textarea'

@@ -5,7 +5,7 @@ import { Badge } from './Badge'
 describe('Badge', () => {
   it('is solid by default', () => {
     render(<Badge>Enabled</Badge>)
-    expect(screen.getByText('Enabled')).toHaveClass('bg-foreground')
+    expect(screen.getByText('Enabled')).toHaveClass('bg-subtle-hover')
   })
 
   it('merges a custom className', () => {

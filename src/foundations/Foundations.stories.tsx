@@ -9,9 +9,12 @@ type Story = StoryObj<typeof meta>
 
 const colors = [
   { token: 'background', swatch: 'bg-background', use: 'Page and component surfaces' },
-  { token: 'foreground', swatch: 'bg-foreground', use: 'Text, borders and solid fills' },
+  { token: 'foreground', swatch: 'bg-foreground', use: 'Text and primary buttons' },
   { token: 'muted-foreground', swatch: 'bg-muted-foreground', use: 'Secondary text' },
   { token: 'disabled', swatch: 'bg-disabled', use: 'Disabled controls only' },
+  { token: 'border', swatch: 'bg-border', use: 'Borders and dividers' },
+  { token: 'subtle', swatch: 'bg-subtle', use: 'Hover and callout backgrounds' },
+  { token: 'subtle-hover', swatch: 'bg-subtle-hover', use: 'Pressed states and tags' },
 ]
 
 export const Colors: Story = {
@@ -19,7 +22,7 @@ export const Colors: Story = {
     <ul className="flex max-w-xl flex-col gap-4">
       {colors.map(({ token, swatch, use }) => (
         <li key={token} className="flex items-center gap-4">
-          <div className={`size-12 shrink-0 border border-foreground ${swatch}`} />
+          <div className={`size-10 shrink-0 rounded-md border border-border ${swatch}`} />
           <div>
             <p className="font-mono text-sm">{token}</p>
             <p className="text-sm text-muted-foreground">{use}</p>
@@ -31,8 +34,8 @@ export const Colors: Story = {
 }
 
 const typeScale = [
-  { name: 'text-3xl semibold', className: 'text-3xl font-semibold' },
-  { name: 'text-lg semibold', className: 'text-lg font-semibold' },
+  { name: 'text-2xl semibold', className: 'text-2xl font-semibold' },
+  { name: 'text-base semibold', className: 'text-base font-semibold' },
   { name: 'text-base', className: 'text-base' },
   { name: 'text-sm', className: 'text-sm' },
   { name: 'font-mono text-sm', className: 'font-mono text-sm' },
@@ -58,7 +61,7 @@ export const Themes: Story = {
         <div
           key={theme}
           data-theme={theme}
-          className="border border-foreground bg-background p-6 text-foreground"
+          className="rounded-md border border-border bg-background p-4 text-foreground"
         >
           <p className="font-semibold">data-theme="{theme}"</p>
           <p className="text-sm text-muted-foreground">Any element can force a theme.</p>

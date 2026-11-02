@@ -1,6 +1,6 @@
 # @leviutima/ds
 
-A minimal black and white design system for React 19 and Tailwind CSS 4.
+A quiet, neutral design system for React 19 and Tailwind CSS 4.
 
 ## Install
 

@@ -6,8 +6,9 @@ function Icon({ children, ...props }: ComponentProps<'svg'>) {
       viewBox="0 0 16 16"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="square"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       aria-hidden="true"
       {...props}
     >
@@ -19,7 +20,7 @@ function Icon({ children, ...props }: ComponentProps<'svg'>) {
 export function CheckIcon(props: ComponentProps<'svg'>) {
   return (
     <Icon {...props}>
-      <path d="M3.5 8.5 6.5 11.5 12.5 4.5" />
+      <path d="M4 8.5 6.8 11 12 5" />
     </Icon>
   )
 }
@@ -27,7 +28,7 @@ export function CheckIcon(props: ComponentProps<'svg'>) {
 export function ChevronDownIcon(props: ComponentProps<'svg'>) {
   return (
     <Icon {...props}>
-      <path d="M3.5 6 8 10.5 12.5 6" />
+      <path d="M4.5 6.5 8 10l3.5-3.5" />
     </Icon>
   )
 }
@@ -35,8 +36,8 @@ export function ChevronDownIcon(props: ComponentProps<'svg'>) {
 export function ErrorIcon(props: ComponentProps<'svg'>) {
   return (
     <Icon {...props}>
-      <path d="M1 1h14v14H1z" />
-      <path d="M8 4.5v4M8 11.5v.01" />
+      <circle cx="8" cy="8" r="6.25" />
+      <path d="M8 4.75v3.75M8 11.25v.01" />
     </Icon>
   )
 }

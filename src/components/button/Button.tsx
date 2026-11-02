@@ -6,23 +6,23 @@ import { focusRing } from '../../lib/focus-ring/focus-ring'
 
 export const buttonVariants = cva(
   [
-    'inline-flex cursor-pointer items-center justify-center gap-2 border font-medium whitespace-nowrap select-none',
-    'disabled:cursor-not-allowed disabled:border-disabled disabled:bg-transparent disabled:text-disabled',
+    'inline-flex cursor-pointer items-center justify-center gap-2 rounded-sm border text-sm font-medium whitespace-nowrap transition-colors duration-100 select-none',
+    'disabled:cursor-not-allowed disabled:border-border disabled:bg-subtle disabled:text-disabled',
     focusRing,
   ],
   {
     variants: {
       variant: {
         primary:
-          'border-foreground bg-foreground text-background hover:bg-background hover:text-foreground active:bg-foreground active:text-background',
+          'border-transparent bg-foreground text-background hover:bg-foreground/85 active:bg-foreground/75',
         secondary:
-          'border-foreground bg-background text-foreground hover:bg-foreground hover:text-background active:bg-background active:text-foreground',
+          'border-border bg-background text-foreground hover:bg-subtle active:bg-subtle-hover',
         ghost:
-          'border-transparent bg-transparent text-foreground hover:bg-foreground hover:text-background active:bg-transparent active:text-foreground',
+          'border-transparent bg-transparent text-foreground hover:bg-subtle active:bg-subtle-hover disabled:border-transparent disabled:bg-transparent',
       },
       size: {
-        sm: 'h-8 px-3 text-sm',
-        md: 'h-10 px-4 text-base',
+        sm: 'h-7 px-2.5',
+        md: 'h-9 px-3',
       },
     },
     defaultVariants: { variant: 'primary', size: 'md' },
@@ -55,7 +55,7 @@ export function Button({
       {loading && (
         <span
           aria-hidden="true"
-          className="size-3 animate-spin border-2 border-current border-t-transparent motion-reduce:animate-none"
+          className="size-3 animate-spin rounded-full border-[1.5px] border-current border-t-transparent motion-reduce:animate-none"
         />
       )}
       {children}

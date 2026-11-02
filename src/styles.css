@@ -1,34 +1,71 @@
-@import '@fontsource/ibm-plex-sans/latin-400.css';
-@import '@fontsource/ibm-plex-sans/latin-500.css';
-@import '@fontsource/ibm-plex-sans/latin-600.css';
-@import '@fontsource/ibm-plex-mono/latin-400.css';
-
 @source './index.js';
 
-@theme {
-  --color-background: light-dark(#fff, #000);
-  --color-foreground: light-dark(#000, #fff);
-  --color-muted-foreground: light-dark(#595959, #a6a6a6);
-  --color-disabled: light-dark(#8c8c8c, #737373);
+@theme inline {
+  --color-background: var(--ds-background);
+  --color-foreground: var(--ds-foreground);
+  --color-muted-foreground: var(--ds-muted-foreground);
+  --color-disabled: var(--ds-disabled);
+  --color-border: var(--ds-border);
+  --color-subtle: var(--ds-subtle);
+  --color-subtle-hover: var(--ds-subtle-hover);
+}
 
-  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+@theme {
+  --font-sans:
+    ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
+    Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 @layer base {
-  :root {
-    color-scheme: light dark;
-  }
-
+  :root,
   [data-theme='light'] {
     color-scheme: light;
+    --ds-background: #ffffff;
+    --ds-foreground: #37352f;
+    --ds-muted-foreground: #6f6e69;
+    --ds-disabled: #a6a5a1;
+    --ds-border: #dfdedb;
+    --ds-subtle: #f7f6f3;
+    --ds-subtle-hover: #efeeeb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+      color-scheme: dark;
+      --ds-background: #191919;
+      --ds-foreground: #d4d4d4;
+      --ds-muted-foreground: #9b9b9b;
+      --ds-disabled: #6b6b6b;
+      --ds-border: #373737;
+      --ds-subtle: #252525;
+      --ds-subtle-hover: #2f2f2f;
+    }
   }
 
   [data-theme='dark'] {
     color-scheme: dark;
+    --ds-background: #191919;
+    --ds-foreground: #d4d4d4;
+    --ds-muted-foreground: #9b9b9b;
+    --ds-disabled: #6b6b6b;
+    --ds-border: #373737;
+    --ds-subtle: #252525;
+    --ds-subtle-hover: #2f2f2f;
+  }
+
+  [data-theme='light'] {
+    color-scheme: light;
+    --ds-background: #ffffff;
+    --ds-foreground: #37352f;
+    --ds-muted-foreground: #6f6e69;
+    --ds-disabled: #a6a5a1;
+    --ds-border: #dfdedb;
+    --ds-subtle: #f7f6f3;
+    --ds-subtle-hover: #efeeeb;
   }
 
   body {
-    @apply bg-background font-sans text-foreground;
+    @apply bg-background font-sans text-foreground antialiased;
   }
 }

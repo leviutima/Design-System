@@ -35,7 +35,7 @@ describe('Button', () => {
     render(<Button className="h-12">Save</Button>)
     const button = screen.getByRole('button')
     expect(button).toHaveClass('h-12')
-    expect(button).not.toHaveClass('h-10')
+    expect(button).not.toHaveClass('h-9')
   })
 
   it('forwards the ref to the button', () => {
@@ -45,6 +45,6 @@ describe('Button', () => {
   })
 
   it('exposes its classes for links styled as buttons', () => {
-    expect(buttonVariants({ variant: 'secondary', size: 'sm' })).toContain('h-8')
+    expect(buttonVariants({ variant: 'secondary', size: 'sm' })).toContain('h-7')
   })
 })

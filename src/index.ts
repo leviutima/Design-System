@@ -1,5 +1,7 @@
 export { Alert } from './components/alert/Alert'
 export type { AlertProps } from './components/alert/Alert'
+export { Badge } from './components/badge/Badge'
+export type { BadgeProps } from './components/badge/Badge'
 export { Button, buttonVariants } from './components/button/Button'
 export type { ButtonProps } from './components/button/Button'
 export { Checkbox } from './components/checkbox/Checkbox'

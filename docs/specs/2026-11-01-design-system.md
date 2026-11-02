@@ -77,4 +77,4 @@ Cada unidade tem uma pasta própria, com o código e a spec, como no console do 
 
 ## Publicação
 
-O `npm publish` depende do login do autor e acontece depois que a v1 for aprovada no Storybook. O repositório público `leviutima/ds` é criado na mesma etapa.
+O `npm publish` depende do login do autor e acontece depois que a v1 for aprovada no Storybook. O código fica no repositório público `leviutima/Desing-System`.

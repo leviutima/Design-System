@@ -29,13 +29,21 @@ export function Field({
   const errorId = error ? `${controlId}-error` : undefined
 
   return (
-    <div className={cn('flex flex-col gap-1.5', className)} {...props}>
+    <div className={cn('flex flex-col gap-1', className)} {...props}>
       <label
         htmlFor={controlId}
-        className={cn('text-sm font-medium', disabled && 'text-disabled')}
+        className={cn(
+          'text-sm font-medium',
+          disabled ? 'text-disabled' : 'text-foreground',
+        )}
       >
         {label}
-        {required && <span aria-hidden="true"> *</span>}
+        {required && (
+          <span aria-hidden="true" className="text-muted-foreground">
+            {' '}
+            *
+          </span>
+        )}
       </label>
       <FieldContext
         value={{
@@ -49,13 +57,13 @@ export function Field({
         {children}
       </FieldContext>
       {hint && (
-        <p id={hintId} className="text-sm text-muted-foreground">
+        <p id={hintId} className="text-xs text-muted-foreground">
           {hint}
         </p>
       )}
       {error && (
-        <p id={errorId} className="flex items-start gap-1.5 text-sm font-medium">
-          <ErrorIcon className="mt-0.5 size-4 shrink-0" />
+        <p id={errorId} className="flex items-start gap-1 text-xs text-foreground">
+          <ErrorIcon className="mt-px size-3.5 shrink-0" />
           {error}
         </p>
       )}

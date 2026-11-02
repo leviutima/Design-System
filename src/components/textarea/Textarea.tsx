@@ -8,11 +8,7 @@ export type TextareaProps = ComponentProps<'textarea'>
 export function Textarea({ className, ...props }: TextareaProps) {
   return (
     <textarea
-      className={cn(
-        controlStyles,
-        'h-auto min-h-24 resize-y py-2 aria-invalid:py-[calc(0.5rem-1px)]',
-        className,
-      )}
+      className={cn(controlStyles, 'h-auto min-h-20 resize-y py-2', className)}
       {...useFieldControl(props)}
     />
   )

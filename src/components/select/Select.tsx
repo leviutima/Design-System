@@ -8,14 +8,14 @@ export type SelectProps = ComponentProps<'select'>
 
 export function Select({ className, children, ...props }: SelectProps) {
   return (
-    <div className="relative has-disabled:text-disabled">
+    <div className="relative text-muted-foreground has-disabled:text-disabled">
       <select
-        className={cn(controlStyles, 'cursor-pointer appearance-none pr-9 aria-invalid:pr-9', className)}
+        className={cn(controlStyles, 'cursor-pointer appearance-none pr-8', className)}
         {...useFieldControl(props)}
       >
         {children}
       </select>
-      <ChevronDownIcon className="pointer-events-none absolute top-3 right-3 size-4" />
+      <ChevronDownIcon className="pointer-events-none absolute top-2.5 right-2.5 size-4" />
     </div>
   )
 }

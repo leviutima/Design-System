@@ -10,22 +10,22 @@ export function Switch({ label, className, ...props }: SwitchProps) {
   return (
     <label
       className={cn(
-        'inline-flex cursor-pointer items-start gap-2 has-disabled:cursor-not-allowed has-disabled:text-disabled',
+        'inline-flex cursor-pointer items-start gap-2 text-sm has-disabled:cursor-not-allowed has-disabled:text-disabled',
         className,
       )}
     >
-      <span className="relative mt-0.5 inline-flex h-5 w-9 shrink-0">
+      <span className="relative inline-flex h-5 w-8 shrink-0">
         <input
           type="checkbox"
           role="switch"
           className={cn(
-            'peer h-5 w-9 cursor-[inherit] appearance-none border border-foreground bg-background checked:bg-foreground',
-            'disabled:border-disabled disabled:checked:bg-disabled',
+            'peer h-5 w-8 cursor-[inherit] appearance-none rounded-full bg-disabled transition-colors duration-100 checked:bg-foreground',
+            'disabled:bg-border disabled:checked:bg-disabled',
             focusRing,
           )}
           {...props}
         />
-        <span className="pointer-events-none absolute top-1 left-1 size-3 bg-foreground peer-checked:translate-x-4 peer-checked:bg-background peer-disabled:bg-disabled peer-disabled:peer-checked:bg-background" />
+        <span className="pointer-events-none absolute top-0.5 left-0.5 size-4 rounded-full bg-background transition-transform duration-100 peer-checked:translate-x-3 motion-reduce:transition-none" />
       </span>
       {label}
     </label>

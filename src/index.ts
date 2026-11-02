@@ -4,6 +4,14 @@ export { Badge } from './components/badge/Badge'
 export type { BadgeProps } from './components/badge/Badge'
 export { Button, buttonVariants } from './components/button/Button'
 export type { ButtonProps } from './components/button/Button'
+export {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from './components/card/Card'
 export { Checkbox } from './components/checkbox/Checkbox'
 export type { CheckboxProps } from './components/checkbox/Checkbox'
 export { Field } from './components/field/Field'

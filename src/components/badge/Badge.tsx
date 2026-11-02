@@ -4,12 +4,12 @@ import type { ComponentProps } from 'react'
 import { cn } from '../../lib/cn/cn'
 
 const badgeVariants = cva(
-  'inline-flex items-center border border-foreground px-1.5 py-0.5 font-mono text-xs',
+  'inline-flex items-center rounded-sm border px-1.5 py-px text-xs',
   {
     variants: {
       variant: {
-        solid: 'bg-foreground text-background',
-        outline: 'bg-transparent text-foreground',
+        solid: 'border-transparent bg-subtle-hover text-foreground',
+        outline: 'border-border bg-transparent text-muted-foreground',
       },
     },
     defaultVariants: { variant: 'solid' },

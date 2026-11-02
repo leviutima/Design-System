@@ -6,7 +6,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leviutima/Desing-System.git"
+    "url": "git+https://github.com/leviutima/Design-System.git"
   },
   "files": [
     "dist"

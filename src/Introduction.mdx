@@ -4,7 +4,7 @@ import { Meta } from '@storybook/addon-docs/blocks'
 
 # @leviutima/ds
 
-A minimal black and white design system for React 19 and Tailwind CSS 4.
+A quiet, neutral design system for React 19 and Tailwind CSS 4.
 
 ## Install
 
@@ -38,9 +38,10 @@ export function SignInForm() {
 
 ## Principles
 
-- **Black and white.** Two grays exist only for secondary text and disabled controls.
-- **Inversion, not decoration.** Hover swaps background and text at once. There are no shadows or transitions.
-- **Shape over color.** Errors use a thicker border, an icon and a message, so they never depend on color.
+- **Soft neutrals.** Warm graphite on white, or light gray on near black, with no accent color.
+- **Small radius, light borders.** Controls have a 4px radius and no shadows.
+- **Gentle feedback.** Hover and press only shift a surface slightly.
+- **Errors in words.** Errors use a darker border, an icon and a message, so they never depend on color.
 
 ## Themes
 
@@ -48,4 +49,4 @@ The system theme applies by default. Set `data-theme="light"` or `data-theme="da
 
 ## Customizing
 
-Every component accepts `className`, and a later Tailwind class replaces the one it conflicts with. To change the fonts, override `--font-sans` and `--font-mono` in your own `@theme`.
+Every component accepts `className`, and a later Tailwind class replaces the one it conflicts with. The system font is used by default. To change it, override `--font-sans` and `--font-mono` in your own `@theme`.

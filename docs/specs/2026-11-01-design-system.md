@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Um design system próprio, preto e branco e minimalista, para todos os frontends web do autor. O projeto instala o pacote uma vez e importa os componentes, com o jeito de usar do shadcn: `variant`, `className` e composição.
+Um design system próprio, neutro e minimalista, no estilo do Notion, para todos os frontends web do autor. O projeto instala o pacote uma vez e importa os componentes, com o jeito de usar do shadcn: `variant`, `className` e composição.
 
 ## Fora do escopo
 
@@ -33,13 +33,13 @@ O pacote entrega JavaScript e `styles.css`, sem CSS pré-compilado. O `styles.cs
 
 ## Identidade visual
 
-- **Cores:** preto e branco puros, que trocam de lugar entre os temas. Dois cinzas, só para texto secundário e estados desabilitados.
+- **Cores:** grafite levemente quente sobre branco no tema claro, e cinza claro sobre quase preto no escuro, sem cor de destaque. Preto e branco puros não são usados.
 - **Tema:** segue o sistema por padrão. `data-theme="light"` ou `"dark"` força um tema em qualquer elemento, e as cores usam `light-dark()`.
-- **Forma:** raio 0, borda de 1px e nenhuma sombra. A única exceção é o `Radio`, que continua redondo para não ser confundido com o `Checkbox`.
-- **Inversão:** hover troca fundo e texto na hora, sem transição, e pressionar inverte de volta.
-- **Foco:** contorno de 2px afastado 2px do componente, só com `focus-visible`.
-- **Tipografia:** IBM Plex Sans para texto e IBM Plex Mono para dados e códigos, servidas pelo pacote. Podem ser trocadas pelos tokens `--font-sans` e `--font-mono`.
-- **Erro:** sem vermelho. A forma comunica: borda de 2px, ícone e mensagem, com `aria-invalid` e `aria-describedby`.
+- **Forma:** raio de 4px nos controles, 6px em `Card`, `Table` e `Alert`, borda clara de 1px e nenhuma sombra. `Radio` e `Switch` são redondos.
+- **Interação:** hover e pressionar só mudam levemente a superfície, com transição de 100 ms.
+- **Foco:** contorno de 2px afastado 1px do componente, só com `focus-visible`.
+- **Tipografia:** fonte do sistema, em tamanhos compactos (14px nos controles). Pode ser trocada pelos tokens `--font-sans` e `--font-mono`.
+- **Erro:** sem vermelho. Borda mais escura, ícone e mensagem, com `aria-invalid` e `aria-describedby`.
 
 ## Componentes
 
@@ -49,7 +49,7 @@ O pacote entrega JavaScript e `styles.css`, sem CSS pré-compilado. O `styles.cs
 | `Input`, `Textarea`, `Select` | Dentro de um `Field`, recebem `id`, estado e descrição automaticamente. `Select` é nativo |
 | `Checkbox`, `Radio`, `Switch` | Inputs nativos com `label` própria. `Switch` usa `role="switch"` |
 | `Field` | Liga label, dica e erro ao campo |
-| `Alert` | `info` (`role="status"`) e `error` (`role="alert"`, invertido) |
+| `Alert` | `info` (`role="status"`) e `error` (`role="alert"`, com borda e ícone) |
 | `Badge` | `solid` e `outline` |
 | `Card` | `Card`, `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter` |
 | `Table` | `Table`, `TableHeader`, `TableBody`, `TableRow`, `TableHead`, `TableCell`, com rolagem horizontal |
